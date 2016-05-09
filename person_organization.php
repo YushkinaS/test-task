@@ -79,10 +79,26 @@ function person_organization_callback($post) {
         <input type="checkbox" id="cp_person_add_organization_checkbox" name="cp_add_organization" />
         <label class="cp_label" for="cp_person_add_organization_checkbox">Добавить организацию</label>
     </div>
-    <div>
+    <div id="cp_person_add_organization_div">
         <input type="text" id="cp_person_organization_name" name="cp_organization_name" placeholder="Название организации" />
         <textarea id="cp_person_organization_description" name="cp_organization_description" placeholder="Описание"></textarea>
     </div>
+    <script type="text/javascript">
+        
+        jQuery(document).ready(function($) {
+            $.toggle_add_organization_div = function() { 
+                if ($('#cp_person_add_organization_checkbox').prop('checked')) {
+                    $('#cp_person_add_organization_div').slideDown('fast');
+                }
+                else {
+                    $('#cp_person_add_organization_div').slideUp('fast');
+                }
+            }
+            $.toggle_add_organization_div();
+            $('#cp_person_add_organization_checkbox').change($.toggle_add_organization_div); 
+        });
+
+    </script>  
     <?php
 }
 
