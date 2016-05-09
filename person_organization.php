@@ -106,7 +106,7 @@ function save_organization_metabox($post_id) {
                 'post_title'    => $new_organization_title,
                 'post_content'  => $new_organization_content
             );
-            $new_organization_id = wp_insert_post( $new_organization);
+            $new_organization_id = wp_insert_post($new_organization);
 
             if ( $new_organization_id ) {
                 update_post_meta($post_id, $key, $new_organization_id);
