@@ -9,7 +9,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-        <?php the_post_thumbnail(); ?>
+        <?php the_post_thumbnail( 'film-thumbnails', array( 'class' => 'img-responsive' )); ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
@@ -24,7 +24,8 @@
 			<div class="row">
 				<div class="col-xs-6">
 					<div class="well well-sm">
-						<span class="glyphicon glyphicon-globe" title="Страна" data-toggle="tooltip"><?php
+						<span class="glyphicon glyphicon-globe" title="Страна" data-toggle="tooltip"></span>
+						<?php
 							foreach ($countries as $country) {
 								$country_link=get_term_link($country);
 								?>
@@ -32,12 +33,12 @@
 								<?php
 							}
 							?>
-						</span>
 					</div>
 				</div>
 				<div class="col-xs-6">
 					<div class="well well-sm">
-						<span class="glyphicon glyphicon-tag" title="Жанр" data-toggle="tooltip"><?php
+						<span class="glyphicon glyphicon-tag" title="Жанр" data-toggle="tooltip"></span>
+						<?php
 							foreach ($genres as $genre) {
 								$genre_link=get_term_link($genre);
 								?>
@@ -45,7 +46,6 @@
 								<?php
 							}
 							?>
-						</span>
 					</div>
 				</div>
 			</div>

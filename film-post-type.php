@@ -137,7 +137,8 @@ function fpt_show_films_custom_fields($content) {
 			<div class="row">
 				<div class="col-xs-6">
 				<div class="well well-sm">
-					<span class="glyphicon glyphicon-globe" title="Страна" data-toggle="tooltip"><?php
+					<span class="glyphicon glyphicon-globe" title="Страна" data-toggle="tooltip"></span>
+					<?php
 						foreach ($countries as $country) {
 							$country_link=get_term_link($country);
 							?>
@@ -146,12 +147,13 @@ function fpt_show_films_custom_fields($content) {
 	 
 						}
 						?>
-					</span>
+					
 				</div>
 				</div>
 				<div class="col-xs-6">
 				<div class="well well-sm">
-					<span class="glyphicon glyphicon-tag" title="Жанр" data-toggle="tooltip"><?php
+					<span class="glyphicon glyphicon-tag" title="Жанр" data-toggle="tooltip"></span>
+					<?php
 						foreach ($genres as $genre) {
 							$genre_link=get_term_link($genre);
 							?>
@@ -160,7 +162,6 @@ function fpt_show_films_custom_fields($content) {
 	 
 						}
 						?>
-					</span>
 				</div>
 				</div>
 			</div>
